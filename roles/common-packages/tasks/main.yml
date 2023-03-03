@@ -12,6 +12,12 @@
     - htop
     - python-pip
     - unzip
+    - apt-transport-https
+    - ca-certificates
+    - software-properties-common
+    - gnupg
+    - gnupg2
+    
   tags:
     - common-packages
 ...
