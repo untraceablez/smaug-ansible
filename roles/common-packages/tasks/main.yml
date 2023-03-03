@@ -11,6 +11,7 @@
     - python3
     - htop
     - python-pip
+    - unzip
   tags:
     - common-packages
 ...
