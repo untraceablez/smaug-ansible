@@ -1,19 +1,7 @@
 ---
-# portainer_install.yml
-- name: deploy portainer container
+#Portainer Install
+- name: deploy Docker Compose
   community.docker.docker_compose:
-  image: portainer/portainer-ce:latest
-    name: portainer
-    state: started
-    restart: unless-stopped
-    security_opt:
-      - no-new-privileges:true
-    volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-      - ./portainer-data:/data
-    ports:
-    - "9000:9000"
-    tags:
-    - portainer
-...
+    project_src: /files
+    files:
+    - docker-compose.yml
