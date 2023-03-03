@@ -28,5 +28,9 @@
   roles:
   - role: docker
 
+# Install portainer
+- hosts: docker
+  roles:
+  - role: portainer
 ...
 

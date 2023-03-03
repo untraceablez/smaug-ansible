@@ -1,7 +1,7 @@
-# portainer_install.yml
 ---
+# portainer_install.yml
 - name: deploy portainer container
-  portainer:
+  community.docker.docker_compose:
   image: portainer/portainer-ce:latest
     name: portainer
     state: started
@@ -14,4 +14,6 @@
       - ./portainer-data:/data
     ports:
     - "9000:9000"
+    tags:
+    - portainer
 ...
