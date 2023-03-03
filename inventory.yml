@@ -3,5 +3,8 @@ ansible_connection=ssh
 ansible_user=dockeradmin
 ansible_ssh_pass=7pHwjJxp6xjq
 
+[all]
+10.0.0.30
+
 [docker]
 10.0.0.30
