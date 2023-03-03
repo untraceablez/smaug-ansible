@@ -15,7 +15,6 @@
     - apt-transport-https
     - ca-certificates
     - software-properties-common
-    - gnupg
     - gnupg2
     
   tags:
