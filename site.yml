@@ -16,5 +16,11 @@
         key: "os_{{ dist_ver_arch }}"
   tags:
   - always
+  
+- hosts: all
+  roles:
+  - role: common-packages
+
+
 ...
 

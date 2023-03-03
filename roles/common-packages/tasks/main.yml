@@ -1,2 +1,16 @@
 ---
 # tasks file for common-packages
+
+- name: Install common packages
+  ansible.builtin.apt:
+    pkg:
+    - neofetch
+    - net-tools
+    - curl
+    - wget
+    - python3
+    - htop
+    - python-pip
+  tags:
+    - common-packages
+...
