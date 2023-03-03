@@ -4,4 +4,4 @@
   community.docker.docker_compose:
     project_src: /files
     files:
-    - docker-compose.yml
+    - docker_compose.yml
