@@ -1,31 +1,22 @@
 ---
 # Gather Ansible Facts
-- hosts: all
-  tasks:
-    - set_fact:
-        dist: "{{ ansible_distribution | lower }}"
-        major_ver: "{{ ansible_distribution_version.split('.')[0] }}"
-        arch: "{{ ansible_architecture }}"
-    - set_fact:
-        dist_ver: "{{ dist }}_{{ major_ver }}"
-        dist_ver_arch: "{{ dist }}_{{ major_ver }}_{{ arch }}"
-    - group_by:
-        key: "os_{{ dist }}"
-    - group_by:
-        key: "os_{{ dist_ver }}"
-    - group_by:
-        key: "os_{{ dist_ver_arch }}"
-  tags:
-  - always
-
-# Docker Install Settings
-- hosts: all
-  become: true
-  vars:
-    container_count: 4
-    default_container_name: docker
-    default_container_image: ubuntu
-    default_container_command: sleep 1
+#- hosts: all
+#  tasks:
+#    - set_fact:
+#        dist: "{{ ansible_distribution | lower }}"
+#        major_ver: "{{ ansible_distribution_version.split('.')[0] }}"
+#        arch: "{{ ansible_architecture }}"
+#    - set_fact:
+#        dist_ver: "{{ dist }}_{{ major_ver }}"
+#        dist_ver_arch: "{{ dist }}_{{ major_ver }}_{{ arch }}"
+#    - group_by:
+#        key: "os_{{ dist }}"
+#    - group_by:
+#        key: "os_{{ dist_ver }}"
+#    - group_by:
+#        key: "os_{{ dist_ver_arch }}"
+#  tags:
+# - always
   
 # Install Common Packages
 - hosts: all
@@ -38,9 +29,18 @@
   - role: server-packages
 
 # Install Docker 
-#- hosts: docker
-#  roles:
-#  - role: docker
+- hosts: docker
+  roles:
+  - role: docker-install
+
+# Docker Install Settings
+- hosts: all
+  become: true
+  vars:
+    container_count: 4
+    default_container_name: docker
+    default_container_image: ubuntu
+    default_container_command: sleep 1
 
 # Install portainer
 #- hosts: docker
