@@ -43,8 +43,8 @@
     default_container_command: sleep 1
 
 # Install portainer
-#- hosts: docker
-#  roles:
-#  - role: portainer
+- hosts: docker
+  roles:
+  - role: portainer
 ...
 
