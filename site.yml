@@ -38,13 +38,13 @@
   - role: server-packages
 
 # Install Docker 
-- hosts: docker
-  roles:
-  - role: docker
+#- hosts: docker
+#  roles:
+#  - role: docker
 
 # Install portainer
-- hosts: docker
-  roles:
-  - role: portainer
+#- hosts: docker
+#  roles:
+#  - role: portainer
 ...
 
