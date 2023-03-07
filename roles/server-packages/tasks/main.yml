@@ -7,9 +7,13 @@
     - cockpit
     - rsync
     - vsftpd
-
-
-    
+    - virtualenv
+    - python3-setuptools
+    - apt-transport-https
+    - ca-certificates
+    - curl
+    - wget
+    - gnupg2
   tags:
     - server-packages
 ...

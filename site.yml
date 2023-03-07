@@ -17,11 +17,25 @@
         key: "os_{{ dist_ver_arch }}"
   tags:
   - always
+
+# Docker Install Settings
+- hosts: all
+  become: true
+  vars:
+    container_count: 4
+    default_container_name: docker
+    default_container_image: ubuntu
+    default_container_command: sleep 1
   
 # Install Common Packages
 - hosts: all
   roles:
   - role: common-packages
+
+# Install Server Packages
+- hosts: all
+  roles:
+  - role: server-packages
 
 # Install Docker 
 - hosts: docker
