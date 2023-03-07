@@ -1,0 +1,15 @@
+---
+# Install server packages
+- name: Install server packages
+  become: yes
+  ansible.builtin.apt:
+    pkg:
+    - cockpit
+    - rsync
+    - vsftpd
+
+
+    
+  tags:
+    - server-packages
+...
