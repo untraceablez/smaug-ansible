@@ -1,5 +1,22 @@
 ---
-# tasks file for common-packages
+# Update all packages
+- name: Update and Upgrade
+  become: yes
+  ansible.builtin.apt:
+    name: "*"
+    state: latest
+  tags:
+    - common-packages
+
+#Upgrade the OS
+- name: Upgrade the OS (apt-get dist-upgrade)
+  become: yes
+  ansible.builtin.apt:
+    upgrade: dist
+  tags:
+    - common-packages
+
+# Install common packages
 - name: Install common packages
   become: yes
   ansible.builtin.apt:
